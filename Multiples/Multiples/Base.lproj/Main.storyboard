@@ -7,6 +7,7 @@
     <customFonts key="customFonts">
         <mutableArray key="HelveticaNeue.ttc">
             <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -22,25 +23,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Chalkboard-Bg-801 × 750" translatesAutoresizingMaskIntoConstraints="NO" id="jpP-1u-SNN">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Chalkboard-Bg-801 × 750" translatesAutoresizingMaskIntoConstraints="NO" id="jpP-1u-SNN" userLabel="Chalkboard-Bg">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Multiples-Logo-533 × 124" translatesAutoresizingMaskIntoConstraints="NO" id="Rrm-wy-kNu">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Multiples-Logo-533 × 124" translatesAutoresizingMaskIntoConstraints="NO" id="Rrm-wy-kNu" userLabel="Multiples-Logo">
                                 <rect key="frame" x="148" y="73" width="305" height="71"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="71" id="KCf-9u-1W7"/>
                                     <constraint firstAttribute="width" constant="305" id="q37-Sy-ddO"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EvJ-N9-Gde" userLabel="Play-Button">
+                            <button hidden="YES" opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EvJ-N9-Gde" userLabel="Play-Button">
                                 <rect key="frame" x="219" y="380" width="163" height="161"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="163" id="Dqu-3r-NsG"/>
                                     <constraint firstAttribute="height" constant="161" id="cZD-7V-HUS"/>
                                 </constraints>
                                 <state key="normal" image="Play-Button-272 × 268"/>
+                                <connections>
+                                    <action selector="playButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DVz-AB-Zf4"/>
+                                </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What is your Multiple?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="otl-JH-tLc" userLabel="Multiples-Input-Txt">
+                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What is your Multiple?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="otl-JH-tLc" userLabel="Multiples-Input-Txt">
                                 <rect key="frame" x="151" y="280" width="298" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="298" id="0Gv-En-TWf"/>
@@ -50,21 +54,50 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFE-V3-8qf" userLabel="Submit-Button">
+                                <rect key="frame" x="199" y="428" width="203" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="203" id="UB4-0G-3yV"/>
+                                    <constraint firstAttribute="height" constant="65" id="evo-fe-4Gj"/>
+                                </constraints>
+                                <state key="normal" image="Submit-Button-600 × 192"/>
+                                <connections>
+                                    <action selector="submitButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xLj-JX-Kge"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12 x 12 = 144" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cQE-M3-mPJ" userLabel="Results-Lbl">
+                                <rect key="frame" x="150" y="279" width="301" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="ZRD-3I-xhA"/>
+                                    <constraint firstAttribute="width" constant="301" id="ryl-Iu-nXF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Rrm-wy-kNu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3Vj-0h-ccP"/>
+                            <constraint firstItem="fFE-V3-8qf" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="160" id="4Uj-k8-yEo"/>
                             <constraint firstItem="Rrm-wy-kNu" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-192" id="AaW-47-huf"/>
                             <constraint firstItem="EvJ-N9-Gde" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="160" id="DZw-5c-P2c"/>
+                            <constraint firstItem="fFE-V3-8qf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="E8X-1Z-XXm"/>
                             <constraint firstItem="otl-JH-tLc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KfD-OP-xRr"/>
                             <constraint firstItem="otl-JH-tLc" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="QBx-1r-Nid"/>
                             <constraint firstItem="jpP-1u-SNN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Sko-qN-IJI"/>
+                            <constraint firstItem="cQE-M3-mPJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TWH-aG-tl6"/>
                             <constraint firstItem="jpP-1u-SNN" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="XOp-rL-zFG"/>
                             <constraint firstItem="EvJ-N9-Gde" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hry-LL-VcW"/>
                             <constraint firstAttribute="trailing" secondItem="jpP-1u-SNN" secondAttribute="trailing" id="s46-Xm-9Ey"/>
+                            <constraint firstItem="cQE-M3-mPJ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="uk4-9r-W7d"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="jpP-1u-SNN" secondAttribute="bottom" id="vL0-3P-f7w"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="multiplesInput" destination="otl-JH-tLc" id="iIM-L6-izl"/>
+                        <outlet property="resultsDisplay" destination="cQE-M3-mPJ" id="rHs-U9-nvK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -75,5 +108,6 @@
         <image name="Chalkboard-Bg-801 × 750" width="801" height="750"/>
         <image name="Multiples-Logo-533 × 124" width="533" height="124"/>
         <image name="Play-Button-272 × 268" width="272" height="268"/>
+        <image name="Submit-Button-600 × 192" width="600" height="192"/>
     </resources>
 </document>

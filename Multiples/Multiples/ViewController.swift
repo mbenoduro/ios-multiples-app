@@ -9,7 +9,11 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    // Properties
+    @IBOutlet weak var multiplesInput: UITextField!
+    @IBOutlet weak var resultsDisplay: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,10 +32,19 @@ class ViewController: UIViewController {
         view.endEditing(true)
     }
 
+    @IBAction func playButtonPressed(sender: AnyObject) {
+        
+    }
+    
+    @IBAction func submitButtonPressed(sender: AnyObject) {
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
 
 
 }
