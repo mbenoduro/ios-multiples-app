@@ -33,7 +33,7 @@
                                     <constraint firstAttribute="width" constant="305" id="q37-Sy-ddO"/>
                                 </constraints>
                             </imageView>
-                            <button hidden="YES" opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EvJ-N9-Gde" userLabel="Play-Button">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EvJ-N9-Gde" userLabel="Play-Button">
                                 <rect key="frame" x="219" y="380" width="163" height="161"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="163" id="Dqu-3r-NsG"/>
@@ -44,7 +44,7 @@
                                     <action selector="playButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DVz-AB-Zf4"/>
                                 </connections>
                             </button>
-                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What is your Multiple?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="otl-JH-tLc" userLabel="Multiples-Input-Txt">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What is your Multiple?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="otl-JH-tLc" userLabel="Multiples-Input-Txt">
                                 <rect key="frame" x="151" y="280" width="298" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="298" id="0Gv-En-TWf"/>
@@ -54,7 +54,7 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFE-V3-8qf" userLabel="Submit-Button">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFE-V3-8qf" userLabel="Submit-Button">
                                 <rect key="frame" x="199" y="428" width="203" height="65"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="203" id="UB4-0G-3yV"/>
@@ -65,7 +65,7 @@
                                     <action selector="submitButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xLj-JX-Kge"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12 x 12 = 144" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cQE-M3-mPJ" userLabel="Results-Lbl">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12 x 12 = 144" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cQE-M3-mPJ" userLabel="Results-Lbl">
                                 <rect key="frame" x="150" y="279" width="301" height="43"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="ZRD-3I-xhA"/>
@@ -96,7 +96,9 @@
                     </view>
                     <connections>
                         <outlet property="multiplesInput" destination="otl-JH-tLc" id="iIM-L6-izl"/>
+                        <outlet property="playButton" destination="EvJ-N9-Gde" id="LrL-Kl-2k0"/>
                         <outlet property="resultsDisplay" destination="cQE-M3-mPJ" id="rHs-U9-nvK"/>
+                        <outlet property="submitButton" destination="fFE-V3-8qf" id="68y-6s-2N3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
