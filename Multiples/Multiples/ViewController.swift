@@ -10,42 +10,60 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    // Properties
+    // Outlets
     @IBOutlet weak var multiplesInput: UITextField!
     @IBOutlet weak var resultsDisplay: UILabel!
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var submitButton: UIButton!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // Looks for single or multiple taps.
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.dismissKeyboard))
-        
-        view.addGestureRecognizer(tap)
-
-        
-    }
+    // Properties
+    var multiplesResult = 0
+    var factors = 0
+    let maxFactor = 14
     
-    //Calls this function when the tap is recognized. 
-    func dismissKeyboard() {
-        
-        // Causes the view (or one of its embedded text fields) to resign the first responder status. 
-        view.endEditing(true)
-    }
-
+    // Actions
     @IBAction func playButtonPressed(sender: AnyObject) {
         if multiplesInput.text != nil && multiplesInput.text != "" {
+            
+            // Hide
             playButton.hidden = true
+            multiplesInput.hidden = true
+            
+            // Unhide
             submitButton.hidden = false
+            resultsDisplay.hidden = false
+            
+            resetLbl()
+            
+            
         } else {
             displayNilValueAlert()
         }
     }
-    
     @IBAction func submitButtonPressed(sender: AnyObject) {
+    
+        multiplesResult = Int(multiplesInput.text!)! * factors
+        
+        resultsDisplay.text = "\(multiplesInput.text!) x \(String(factors)) = \(String(multiplesResult))"
+        
+        factors += 1
+        
+        if isGameOver(){
+            
+            // Unhide
+            playButton.hidden = false
+            multiplesInput.hidden = false
+            
+            // Hide
+            submitButton.hidden = true
+            resultsDisplay.hidden = true
+            
+            resetLbl()
+            
+        } 
     }
     
+    // Additional Functionality
     func displayNilValueAlert (){
         
         // Setup a constant to UIAlertController Class
@@ -57,13 +75,37 @@ class ViewController: UIViewController {
         // Display alert
         self.presentViewController(nilMsgAlertViewController, animated: true, completion: nil)
     }
+    func dismissKeyboard() {
+        
+        // Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+    func isGameOver() -> Bool {
+        if factors >= maxFactor {
+            return true
+        } else {
+            return false
+        }
+    }
+    func resetLbl() {
+        resultsDisplay.text = "Press submit to start!"
+    }
     
+    // Override
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Looks for single or multiple taps.
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.dismissKeyboard))
+        
+        view.addGestureRecognizer(tap)
+        
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
-
 }
 
